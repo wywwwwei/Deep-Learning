@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     # normalize
     mean_x = np.mean(x, axis=0)  # 18 * 9
-    std_x = np.mean(x, axis=0)  # 18 * 9
+    std_x = np.std(x, axis=0)  # 18 * 9
     for i in range(x.shape[0]):  # 5652
         for j in range(x.shape[1]):  # 18 * 9
             if std_x[j] != 0:

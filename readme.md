@@ -5,5 +5,9 @@
         <td>Homework 1</td>
         <td><a href="./regression">Regression</a></td>
     </tr>
+    <tr>
+        <td>Homework 2</td>
+        <td><a href="./classification">Classification</a></td>
+    </tr>
 </table>
 
