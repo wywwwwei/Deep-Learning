@@ -82,6 +82,7 @@ def train(model: CNNClassifier, train_loader: DataLoader, validate_loader: DataL
             _, predict = torch.max(output.data, dim=1)
             val_acc += torch.sum(predict == labels)
             val_loss += batch_loss.item()
+            
         print('[%03d/%03d] %2.2f sec(s) Train Acc: %3.6f Loss: %3.6f | Val Acc: %3.6f loss: %3.6f' % \
             (epoch + 1, epochs, time.time()-epoch_start_time, \
              train_acc/train_loader.dataset.__len__(), train_loss/train_loader.dataset.__len__(), \
