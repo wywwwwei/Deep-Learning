@@ -9,5 +9,9 @@
         <td>Homework 2</td>
         <td><a href="./classification">Classification</a></td>
     </tr>
+    <tr>
+        <td>Homework 3</td>
+        <td><a href="./cnn">CNN</a></td>
+    </tr>
 </table>
 
