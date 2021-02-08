@@ -11,7 +11,7 @@ import model.cnn as cnn
 
 
 def parse_arg() -> Tuple[str, str, str, str]:
-    parser = argparse.ArgumentParser(description="ML2020 Spring HW2")
+    parser = argparse.ArgumentParser(description="ML2020 Spring HW3")
 
     parser.add_argument("-t", "--train", metavar="train data", default="./data/training", help="the directory of the train data")
     parser.add_argument("-v", "--validation", metavar="validation data", default="./data/validation", help="the directory of the validation data")

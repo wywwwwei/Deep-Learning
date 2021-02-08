@@ -13,5 +13,10 @@
         <td>Homework 3</td>
         <td><a href="./cnn">CNN</a></td>
     </tr>
+    <tr>
+        <td>Homework 4</td>
+        <td><a href="./rnn">RNN</a></td>
+    </tr>
 </table>
+
 

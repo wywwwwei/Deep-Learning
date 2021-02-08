@@ -49,7 +49,7 @@ class CNNClassifier(nn.Module):
 
 
 def train(model: CNNClassifier, train_loader: DataLoader, validate_loader: DataLoader, epochs: int = 30, lr: float = 0.001) -> None:
-    model.cuda()
+    model = model.cuda()
     loss = nn.CrossEntropyLoss()
     optimizer = Adam(model.parameters(), lr=lr)
 
@@ -70,7 +70,7 @@ def train(model: CNNClassifier, train_loader: DataLoader, validate_loader: DataL
             optimizer.step()
 
             _, predict = torch.max(output.data, dim=1)
-            train_acc += torch.sum(predict == labels)
+            train_acc += torch.sum(predict == labels).item()
             train_loss += batch_loss.item()
 
         model.eval()
@@ -80,7 +80,7 @@ def train(model: CNNClassifier, train_loader: DataLoader, validate_loader: DataL
             batch_loss = loss(output, labels)
 
             _, predict = torch.max(output.data, dim=1)
-            val_acc += torch.sum(predict == labels)
+            val_acc += torch.sum(predict == labels).item()
             val_loss += batch_loss.item()
             
         print('[%03d/%03d] %2.2f sec(s) Train Acc: %3.6f Loss: %3.6f | Val Acc: %3.6f loss: %3.6f' % \
@@ -90,6 +90,7 @@ def train(model: CNNClassifier, train_loader: DataLoader, validate_loader: DataL
 
 
 def predict(model: CNNClassifier, x: DataLoader) -> List[int]:
+    model = model.cuda()
     prediction = []
     model.eval()
     with torch.no_grad():
